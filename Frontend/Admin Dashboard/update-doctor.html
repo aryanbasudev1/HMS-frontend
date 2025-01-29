@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Doctor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Standard Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand font-weight-bold" href="../index.html">
+            <img src="../images/LOGO-removebg-preview.png" alt="Hospital Logo" width="auto" height="56px" class="mr-2">
+        </a>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px;">
+        <div class="card shadow-sm p-4">
+            <h4 class="mb-3 text-center">Update Doctor Details</h4>
+            <form>
+                <input type="hidden" id="doctorId" th:value="${doctor.id}">
+
+                <div class="form-group">
+                    <label for="doctorName">Doctor Name</label>
+                    <input type="text" id="doctorName" class="form-control" th:value="${doctor.name}" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctorEmail">Email</label>
+                    <input type="email" id="doctorEmail" class="form-control" th:value="${doctor.email}" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctorContact">Contact</label>
+                    <input type="text" id="doctorContact" class="form-control" th:value="${doctor.contact}" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctorDepartment">Department</label>
+                    <select id="doctorDepartment" class="form-control">
+                        <option th:each="dept : ${departments}" th:value="${dept.name}" th:text="${dept.name}" 
+                                th:selected="${dept.name == doctor.department}">Select Department</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update Doctor</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

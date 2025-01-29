@@ -48,9 +48,19 @@
                     <label for="patientName">Full Name</label>
                     <input type="text" id="patientName" name="name" class="form-control" placeholder="Enter full name" required>
                 </div>
-                <div class="form-group">
-                    <label for="patientAge">Age</label>
-                    <input type="number" id="patientAge" name="age" class="form-control" placeholder="Enter age" required>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="patientAge">Age</label>
+                        <input type="number" id="patientAge" name="age" class="form-control" placeholder="Enter age" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="patientSex">Sex</label> <!-- New Field Added -->
+                        <select id="patientSex" name="sex" class="form-control" required>
+                            <option value="">Select Sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="patientPhone">Phone Number</label>

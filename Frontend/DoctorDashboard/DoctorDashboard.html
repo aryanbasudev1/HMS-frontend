@@ -66,16 +66,16 @@
             <div class="col-md-4">
                 <div class="card text-center shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Pending Appointments</h5>
+                        <h5 class="card-title">All Appointments</h5>
                         <p id="pendingCount" class="display-4">7</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pending Appointments Table -->
+        <!-- All Appointments Table (Final Updated Version) -->
         <div class="card shadow-sm mb-5">
-            <div class="card-header">Pending Appointments</div>
+            <div class="card-header">All Appointments</div>
             <div class="table-responsive overflow-auto" style="max-height: 400px;">
                 <table class="table table-striped">
                     <thead class="thead-dark">
@@ -84,20 +84,44 @@
                             <th>Contact Number</th>
                             <th>Age</th>
                             <th>Sex</th>
-                            <th>Appointment Cause</th>
-                            <th>Confirmation</th>
+                            <th>Date</th> <!-- New Column Added -->
+                            <th>Time</th> <!-- New Column Added -->
+                            <th>Issue</th> <!-- Changed from "Appointment Cause" -->
+                            <th>Appointment Status</th> <!-- New Column: Confirm/Reject Buttons -->
+                            <th>Report Status</th> <!-- Column with Generate Report Button -->
                         </tr>
                     </thead>
-                    <tbody id="pendingAppointmentsTableBody">
+                    <tbody id="appointmentsTableBody">
                         <tr>
                             <td>John Doe</td>
                             <td>+1234567890</td>
                             <td>32</td>
                             <td>Male</td>
+                            <td>2025-02-15</td> <!-- Example Date -->
+                            <td>10:00 AM</td> <!-- Example Time -->
                             <td>General Checkup</td>
                             <td>
-                                <button class="btn btn-success btn-sm confirm-btn">Yes</button>
-                                <button class="btn btn-danger btn-sm reject-btn">No</button>
+                                <button class="btn btn-success btn-sm confirm-btn">Confirm</button>
+                                <button class="btn btn-danger btn-sm reject-btn">Reject</button>
+                            </td>
+                            <td>
+                                <a href="../DoctorDashboard/generate-report.html" class="btn btn-sm btn-primary">Generate Report</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>+9876543210</td>
+                            <td>29</td>
+                            <td>Female</td>
+                            <td>2025-02-20</td> <!-- Example Date -->
+                            <td>11:30 AM</td> <!-- Example Time -->
+                            <td>Dental Checkup</td>
+                            <td>
+                                <button class="btn btn-success btn-sm confirm-btn">Confirm</button>
+                                <button class="btn btn-danger btn-sm reject-btn">Reject</button>
+                            </td>
+                            <td>
+                                <a href="../DoctorDashboard/generate-report.html" class="btn btn-sm btn-primary">Generate Report</a>
                             </td>
                         </tr>
                     </tbody>
